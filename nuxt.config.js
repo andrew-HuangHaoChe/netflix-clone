@@ -1,6 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: 'netflix-clone'
+  }
+} : {}
+
 export default {
+  ...routerBase,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - netflix-clone',
